@@ -1,6 +1,7 @@
 from itertools import chain
-import utils_parser
-import mapping_parser
+from utils_parser import sequence, parse_word, parse_scalar
+from mapping_parser import parse_mappings, parse_mapping
+from tag_parser import parse_tags
 
 parse_left_square_brace = parse_word("[")
 parse_right_square_brace = parse_word("]")

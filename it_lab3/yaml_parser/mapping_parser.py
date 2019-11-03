@@ -1,4 +1,4 @@
-import utils_parser
+from utils_parser import parse_word, sequence, parse_key, parse_value
 
 parse_left_curly_brace = parse_word("{")
 parse_right_curly_brace = parse_word("}")

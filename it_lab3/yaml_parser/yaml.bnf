@@ -1,0 +1,33 @@
+# ROOT
+
+root ::= mappings | mapping | sequence | scalar
+
+value ::= scalar | tags | mappings | mapping | sequence
+
+key ::= scalar
+
+# MAPPINGS
+mapping ::= key ': ' value
+
+comma-separated-mappings ::= mapping | mapping ',' comma-separated-mappings
+
+mappings ::= '{' '}' | '{' comma-separated-mappings '}'
+
+
+# SEQUENCES
+
+list-element ::= scalar | mappings | mapping | sequence | tags
+
+dash-separated-sequence ::= '- ' list-element | '- ' list-element '\n' dash-separated-sequence
+
+comma-separated-list-elements ::= list-element | list-element ',' comma-separated-list-elements
+
+comma-separated-sequence ::= '[' ']' | '[' comma-separated-list-elements ']'
+
+sequence ::= dash-separated-sequence | comma-separated-sequence
+
+# TAGS
+
+tags ::= integer | float | string | null | 'true' | 'false' 
+
+null ::= '\n'
